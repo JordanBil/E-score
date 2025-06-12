@@ -1,0 +1,32 @@
+# ----- Node.js (Vue.js) -----
+front-vue/node_modules/
+front-vue/dist/
+front-vue/.env
+front-vue/.vitepress/
+front-vue/.output/
+front-vue/.cache/
+
+# ----- Symfony -----
+api-symfony/var/
+api-symfony/vendor/
+api-symfony/.env.local
+api-symfony/.env.test.local
+api-symfony/.phpunit.result.cache
+api-symfony/public/bundles/
+api-symfony/config/secrets/dev/dev.*
+api-symfony/config/secrets/test/test.*
+
+# ----- Docker -----
+docker/*.log
+docker-compose.override.yml
+*.pid
+
+# ----- IDE / OS -----
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# ----- Git -----
+*.swp
+*.swo
