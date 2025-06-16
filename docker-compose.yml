@@ -1,0 +1,37 @@
+version: '3.8'
+
+services:
+  ### Symfony API ###
+  php:
+    container_name: symfony
+    build:
+      context: ./api-symfony
+      dockerfile: Dockerfile
+    ports:
+      - "8000:80"
+    volumes:
+      - ./api-symfony:/var/www/html
+    depends_on:
+      - db
+    networks:
+      - backend
+
+  ### Base de données PostgreSQL ###
+  db:
+    image: postgres:15
+    container_name: postgres
+    environment:
+      POSTGRES_DB: easport
+      POSTGRES_USER: symfony
+      POSTGRES_PASSWORD: password
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    networks:
+      - backend
+ 
+networks:
+  backend:
+
+volumes:
+  pgdata:
+     
